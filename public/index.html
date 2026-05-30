@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AETHER — Premium Next-Gen E-Commerce Gadgets</title>
+  <meta name="description" content="Discover AETHER, a premium online store for next-generation technology accessories, audio devices, and custom developer peripherals.">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Premium Header -->
+  <header>
+    <div class="container nav-wrapper">
+      <div class="logo" onclick="app.navigate('/')" id="site-logo">
+        <span>🌌</span> AETHER
+      </div>
+      
+      <nav id="nav-actions">
+        <!-- Renders dynamically from views.js -->
+        <button class="cart-icon-btn" onclick="app.toggleCartDrawer()">
+          🛒<span class="cart-badge">0</span>
+        </button>
+        <button class="btn btn-outline btn-sm" onclick="app.navigate('/login')">Login</button>
+        <button class="btn btn-primary btn-sm" onclick="app.navigate('/register')">Register</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mount Point for SPA Views -->
+  <main class="container" id="app">
+    <div style="text-align: center; padding: 100px 0; color: var(--text-muted);">
+      <p style="font-size: 18px;">Powering up AETHER store engine...</p>
+    </div>
+  </main>
+
+  <!-- Interactive Slide-out Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay" onclick="app.closeCartDrawer()"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3 style="font-size: 20px;">Shopping Cart</h3>
+      <button class="cart-drawer-close" onclick="app.closeCartDrawer()">×</button>
+    </div>
+    <div class="cart-items-wrapper" id="cart-items-list">
+      <!-- Injected by app.js -->
+    </div>
+    <div class="cart-drawer-footer">
+      <div class="cart-total-row">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">$0.00</span>
+      </div>
+      <button class="btn btn-accent" style="width: 100%; justify-content: center;" onclick="app.checkoutCart()">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Footer -->
+  <footer style="border-top: 1px solid var(--border-color); padding: 40px 0; text-align: center; font-size: 13px; color: var(--text-muted); background: var(--bg-primary);">
+    <div class="container">
+      <p>© 2026 AETHER Tech Store. All rights reserved. Zero-setup developer preview.</p>
+    </div>
+  </footer>
+
+  <!-- SPA Client Libraries -->
+  <script src="/js/api.js"></script>
+  <script src="/js/views.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
